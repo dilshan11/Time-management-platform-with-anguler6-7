@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" style="height: 50px">
+
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="log1">
+        <div class="form-group">
+          <label  for="exampleInputEmail1">Email address</label>
+          <input formControlName="ema" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input formControlName="password1" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="check1()">Submit</button>
+      </form>
+      <li *ngIf="exitbutton" class="list-group-item list-group-item-danger" style="width: 100%">password or email is incorrect</li>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" style="height: 100px">
+      <button type="button" class="btn btn-outline-warning asp" (click)="gotoprevious()">Previous</button>
+      <button type="button" class="btn btn-warning asp">{{stricurrentname}}</button>
+      <button type="button" class="btn btn-outline-warning asp" (click)="gotonext()">Next</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">Su</th>
+    <th scope="col">Mo</th>
+    <th scope="col">Tu</th>
+    <th scope="col">We</th>
+    <th scope="col">Th</th>
+    <th scope="col">Fr</th>
+    <th scope="col">Sa</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      <li class="list-group-item as" *ngIf="dataor[0]" >a</li>
+      <li class="list-group-item" *ngFor="let a of su" [style.background-color]=" a==currentdate ?'orange': ''" (click)="viewdate(a)">{{a}}</li>
+    </td>
+    <td>
+      <li class="list-group-item as" *ngIf="dataor[1]" >a</li>
+      <li class="list-group-item" *ngFor="let a of mo" [style.background-color]=" a==currentdate ?'orange': ''" (click)="viewdate(a)">{{a}}</li>
+    </td>
+    <td>
+      <li class="list-group-item as" *ngIf="dataor[2]" >a</li>
+      <li class="list-group-item" *ngFor="let a of tu" [style.background-color]=" a==currentdate ?'orange': ''" (click)="viewdate(a)">{{a}}</li>
+    </td>
+    <td>
+      <li class="list-group-item as" *ngIf="dataor[3]" >a</li>
+      <li class="list-group-item" *ngFor="let a of we" [style.background-color]=" a==currentdate ?'orange': ''" (click)="viewdate(a)">{{a}}</li>
+    </td>
+    <td>
+      <li class="list-group-item as" *ngIf="dataor[4]" >a</li>
+      <li class="list-group-item" *ngFor="let a of th" [style.background-color]=" a==currentdate ?'orange': ''" (click)="viewdate(a)" >{{a}}</li>
+    </td>
+    <td>
+      <li class="list-group-item as" *ngIf="dataor[5]" >a</li>
+      <li class="list-group-item" *ngFor="let a of fr" [style.background-color]=" a==currentdate ?'orange': ''" (click)="viewdate(a)">{{a}}</li>
+    </td>
+    <td>
+      <li class="list-group-item as" *ngIf="dataor[6]" >a</li>
+      <li class="list-group-item" *ngFor="let a of sa" [style.background-color]=" a==currentdate ?'orange': ''" (click)="viewdate(a)">{{a}}</li>
+    </td>
+  </tr>
+  </tbody>
+</table>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="exist" >
+  <div class="row" style="margin: 25px 0px">
+    <div class="col-md-1">
+     </div>
+    <div class="col-md-1">
+     </div>
+    <div class="col-md-10">
+      <p>Day {{selecteddate}}</p>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="exist">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="day" action="">
+      <table class="table table-bordered">
+
+          <thead>
+          <tr>
+            <th scope="col" style="width: 200px">Time</th>
+            <th scope="col">event</th>
+            <th scope="col" style="width: 200px">Delete</th>
+          </tr>
+          </thead>
+          <tr>
+            <td>6am-12pm</td>
+            <td>
+              <div class="form-group">
+                <input formControlName="frist" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+            </td>
+            <td><button type="button" class="btn btn-outline-warning">Delete</button></td>
+          </tr> <tr>
+        <td>12am-18am</td>
+        <td>
+          <div class="form-group">
+            <input formControlName="second" type="email" class="form-control" id="example" aria-describedby="emailHelp">
+          </div>
+        </td>
+        <td><button type="button" class="btn btn-outline-warning">Delete</button></td>
+      </tr>
+        <tr>
+          <td>18pm-12am</td>
+          <td>
+            <div class="form-group">
+              <input formControlName="thrid" type="email" class="form-control" id="exampleInput" aria-describedby="emailHelp">
+            </div>
+          </td>
+          <td><button type="button" class="btn btn-outline-warning">Delete</button></td>
+        </tr>
+
+      </table>
+        <button style="position: relative;left: 90%" type="submit" (click)="savedate()"  class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+</div>

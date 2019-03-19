@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" style="height: 50px">
+
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="user">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-control" formControlName="fullname">
+        </div>
+        <div class="form-group">
+          <label>Email address</label>
+          <input type="text" class="form-control" formControlName="email">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Password</label>
+            <input type="password" class="form-control" formControlName="password" id="inputEmail4" placeholder="password">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input type="password" class="form-control" formControlName="repassword" id="inputPassword4" placeholder="Re type the Password">
+          </div>
+          <li *ngIf="buttonexit" class="list-group-item list-group-item-danger" style="width: 100%">password is incorrect</li>
+        </div>
+        <button type="submit" class="btn btn-primary as">Reset</button>
+        <button type="submit" class="btn btn-primary as" (click)="saving()">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
