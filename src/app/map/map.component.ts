@@ -9,12 +9,16 @@ import {SampleService} from '../sample.service';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
+  real = [];
+  a;
+  c;
   day = new FormGroup({
     frist: new FormControl(),
     second: new FormControl(),
     thrid: new FormControl()
   });
   user_day;
+  monthdetails;
   user;
   date;
   dataor: object = [];
@@ -44,23 +48,48 @@ export class MapComponent implements OnInit {
       this.getalldetails();
   }
   getalldetails() {
+    this.real = [];
     const userdetails = {email: this.user.email, month: this.stricurrentname};
     this.service.geyalldetails(userdetails).subscribe(data => {
       console.log(data);
-    });
+      this.monthdetails = data;
+      for (let i = 0; i < this.monthdetails.length; i++) {
+      const a = this.monthdetails[i].month;
+      if (this.monthdetails[i].frist === 'free') {
+        this.monthdetails[i].frist = 0;
+      } else {
+        this.monthdetails[i].frist = 1;
+      }
+      if (this.monthdetails[i].second === 'free') {
+        this.monthdetails[i].second = 0;
+      } else {
+        this.monthdetails[i].second = 1;
+      }
+      if (this.monthdetails[i].third === 'free') {
+        this.monthdetails[i].third = 0;
+      } else {
+        this.monthdetails[i].third = 1;
+      }
+      this.c = a.substring(this.stricurrentname.length, a.length);
+      this.real[this.c] = this.monthdetails[i];
+    }
+    for (let n = 1; n <= 31; n++) {
+      if (this.real[n] == null) {
+        this.real[n] = {frist: ''};
+      }
+    }
+  });
   }
 
   getuser() {
     this.service.currentmseeage.subscribe(message => {
       this.user = message;
-      console.log(this.user);
     });
   }
   viewdate(a) {
     this.selecteddate = a;
     this.exist = true;
-    console.log(a);
-  }
+}
   makedefault() {
     this.dataor = [];
     this.tu = [];
@@ -73,19 +102,22 @@ export class MapComponent implements OnInit {
     this.week = [this.tu , this.we , this.th , this.fr , this.sa , this.su , this.mo];
   }
   gotoprevious() {
-  this.makedefault();
-  this.currentmonth = this.currentmonth - 1;
-    this.stricurrentname = this.strimonth[this.currentmonth];
-  this.fixdatetomonth(this.currentmonth);
-  this.getalldetails();
+    if (this.currentmonth !== 0) {
+      this.makedefault();
+      this.currentmonth = this.currentmonth - 1;
+      this.stricurrentname = this.strimonth[this.currentmonth];
+      this.fixdatetomonth(this.currentmonth);
+      this.getalldetails();
+    }
 }
   gotonext() {
-    this.makedefault();
-    this.currentmonth = this.currentmonth + 1;
-    this.stricurrentname = this.strimonth[this.currentmonth];
-    this.fixdatetomonth(this.currentmonth);
-    this.getalldetails();
-  //  console.log(this.currentmonth);
+    if (this.currentmonth !== 11) {
+      this.makedefault();
+      this.currentmonth = this.currentmonth + 1;
+      this.stricurrentname = this.strimonth[this.currentmonth];
+      this.fixdatetomonth(this.currentmonth);
+      this.getalldetails();
+    }
   }
   fixdatetomonth (mon: number) {
     const mon1 = this.nomonth[mon];
@@ -136,9 +168,8 @@ export class MapComponent implements OnInit {
           third: a1.thrid,
           month: this.stricurrentname
         };
-        console.log(this.user_day);
       this.service.saveuser_day(this.user_day).subscribe(mn => {
-        console.log('asasasasas');
       });
+      this.exist = false;
   }
 }

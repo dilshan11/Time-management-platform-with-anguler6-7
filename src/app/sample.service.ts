@@ -31,4 +31,7 @@ export class SampleService {
   geyalldetails(userdatils){
     return this.http.post('http://localhost:8080/calander/getall', userdatils);
   }
+  getallfriends() {
+    return this.http.get('http://localhost:8080/calander/getfriends');
+  }
 }

@@ -4,3 +4,20 @@
 .asp{
   margin: 10px;
 }
+
+.asd{
+  width: 33.33%;
+  background-color: red;
+}
+ p{
+   margin: 2px 0px;
+ }
+span{
+  height:20px;
+  display: block;
+  margin: 1px;
+}
+/*li{*/
+  /*border-width:2px;*/
+/*}*/
+

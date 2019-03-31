@@ -26,32 +26,34 @@
   <tbody>
   <tr>
     <td>
-      <li class="list-group-item as" *ngIf="dataor[0]" >a</li>
-      <li class="list-group-item" *ngFor="let a of su" [style.background-color]=" a==currentdate ?'orange': ''" (click)="viewdate(a)">{{a}}</li>
+      <li class="list-group-item as" *ngIf="dataor[0]" ><span></span><span>a</span><span></span></li>
+      <li class="list-group-item" *ngFor="let a of su" [style.border]=" (a== currentdate)?'orange':''" (click)="viewdate(a)"><span [style.background-color]="real[a].frist==1?'orange':''"></span><span [style.background-color]="real[a].second==1?'orange':''"><p align="center">{{a}}</p></span><span [style.background-color]="real[a].third==1?'orange':''"></span>
+      </li>
     </td>
     <td>
-      <li class="list-group-item as" *ngIf="dataor[1]" >a</li>
-      <li class="list-group-item" *ngFor="let a of mo" [style.background-color]=" a==currentdate ?'orange': ''" (click)="viewdate(a)">{{a}}</li>
+
+      <li class="list-group-item as" *ngIf="dataor[1]" ><span></span><span>a</span><span></span></li>
+      <li class="list-group-item" *ngFor="let a of mo" [style.border]=" a==currentdate ?'orange': ''" (click)="viewdate(a)"><span [style.background-color]="real[a].frist==1?'orange':''"></span><span [style.background-color]="real[a].second==1?'orange':''"><p align="center">{{a}}</p></span><span [style.background-color]="real[a].third==1?'orange':''"></span></li>
     </td>
     <td>
-      <li class="list-group-item as" *ngIf="dataor[2]" >a</li>
-      <li class="list-group-item" *ngFor="let a of tu" [style.background-color]=" a==currentdate ?'orange': ''" (click)="viewdate(a)">{{a}}</li>
+      <li class="list-group-item as" *ngIf="dataor[2]" ><span></span><span>a</span><span></span></li>
+      <li class="list-group-item" *ngFor="let a of tu" [style.border]=" a==currentdate ?'orange': ''" (click)="viewdate(a)"><span [style.background-color]="real[a].frist==1?'orange':''"></span><span [style.background-color]="real[a].second==1?'orange':''"><p align="center">{{a}}</p></span><span [style.background-color]="real[a].third==1?'orange':''"></span></li>
     </td>
     <td>
-      <li class="list-group-item as" *ngIf="dataor[3]" >a</li>
-      <li class="list-group-item" *ngFor="let a of we" [style.background-color]=" a==currentdate ?'orange': ''" (click)="viewdate(a)">{{a}}</li>
+      <li class="list-group-item as" *ngIf="dataor[3]" ><span></span><span>a</span><span></span></li>
+      <li class="list-group-item" *ngFor="let a of we" [style.border]=" a==currentdate ?'solid orange': ''" (click)="viewdate(a)"><span [style.background-color]="real[a].frist==1?'orange':''"></span><span [style.background-color]="real[a].second==1?'orange':''"><p align="center">{{a}}</p></span><span [style.background-color]="real[a].third==1?'orange':''"></span></li>
     </td>
     <td>
-      <li class="list-group-item as" *ngIf="dataor[4]" >a</li>
-      <li class="list-group-item" *ngFor="let a of th" [style.background-color]=" a==currentdate ?'orange': ''" (click)="viewdate(a)" >{{a}}</li>
+      <li class="list-group-item as" *ngIf="dataor[4]" ><span></span><span>a</span><span></span></li>
+      <li class="list-group-item" *ngFor="let a of th" [style.border]=" a==currentdate ?'orange': ''" (click)="viewdate(a)" ><span [style.background-color]="real[a].frist==1?'orange':''"></span><span [style.background-color]="real[a].second==1?'orange':''"><p align="center">{{a}}</p></span><span [style.background-color]="real[a].third==1?'orange':''"></span></li>
     </td>
     <td>
-      <li class="list-group-item as" *ngIf="dataor[5]" >a</li>
-      <li class="list-group-item" *ngFor="let a of fr" [style.background-color]=" a==currentdate ?'orange': ''" (click)="viewdate(a)">{{a}}</li>
+      <li class="list-group-item as" *ngIf="dataor[5]" ><span></span><span>a</span><span></span></li>
+      <li class="list-group-item" *ngFor="let a of fr" [style.border]=" a==currentdate ?'orange': ''" (click)="viewdate(a)"><span [style.background-color]="real[a].frist==1?'orange':''"></span><span [style.background-color]="real[a].second==1?'orange':''"><p align="center">{{a}}</p></span><span [style.background-color]="real[a].third==1?'orange':''"></span></li>
     </td>
     <td>
-      <li class="list-group-item as" *ngIf="dataor[6]" >a</li>
-      <li class="list-group-item" *ngFor="let a of sa" [style.background-color]=" a==currentdate ?'orange': ''" (click)="viewdate(a)">{{a}}</li>
+      <li class="list-group-item as" *ngIf="dataor[6]" ><span></span><span>a</span><span></span></li>
+      <li class="list-group-item" *ngFor="let a of sa" [style.border]=" a==currentdate ?'orange': ''" (click)="viewdate(a)"><span [style.background-color]="real[a].frist==1?'orange':''"></span><span [style.background-color]="real[a].second==1?'orange':''"><p align="center">{{a}}</p></span><span [style.background-color]="real[a].third==1?'orange':''"></span></li>
     </td>
   </tr>
   </tbody>

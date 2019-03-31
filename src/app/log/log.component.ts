@@ -24,9 +24,9 @@ export class LogComponent implements OnInit {
            this.exitbutton = true;
         } else {
           this.myservice.changeMessage(data);
+           console.log(data);
           this.route.navigate(['/mycalender']);
         }
       });
   }
-
 }

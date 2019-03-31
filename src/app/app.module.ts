@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
+import { FriendsComponent } from './friends/friends.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {RouterModule} from '@angular/router';
     MapComponent,
     NavigateComponent,
     LogComponent,
-    RegisterComponent
+    RegisterComponent,
+    FriendsComponent
   ],
   imports: [
     BrowserModule,
